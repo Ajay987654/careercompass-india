@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+@theme {
+--color-background: #eff4fb;
+--color-foreground: #0f172a;
+--color-card: #ffffff;
+--color-card-foreground: #0f172a;
+--color-popover: #ffffff;
+--color-popover-foreground: #0f172a;
+--color-primary: #1f2b48;
+--color-primary-foreground: #ffffff;
+--color-secondary: #f2f6ff;
+--color-secondary-foreground: #1f2b48;
+--color-muted: #f3f6fb;
+--color-muted-foreground: #5b6b7c;
+--color-accent: #e6f0ff;
+--color-accent-foreground: #1f2b48;
+--color-destructive: #ef4444;
+--color-destructive-foreground: #ffffff;
+--color-border: #e4e9f2;
+--color-input: #e4e9f2;
+--color-ring: #4ea4ff;
+--color-chart-1: #6aa8ff;
+--color-chart-2: #8bc8ff;
+--color-chart-3: #4f7cff;
+--color-chart-4: #b3a6ff;
+--color-chart-5: #7ad3ff;
+--color-sidebar: #eef3fb;
+--color-sidebar-foreground: #4b5563;
+--color-sidebar-primary: #1f2b48;
+--color-sidebar-primary-foreground: #ffffff;
+--color-sidebar-accent: #e9f0fb;
+--color-sidebar-accent-foreground: #1f2b48;
+--color-sidebar-border: #d9e2ef;
+--color-sidebar-ring: #4ea4ff;
+--radius-lg: 0.75rem;
+--radius-md: calc(0.75rem - 2px);
+--radius-sm: calc(0.75rem - 4px);
+--animate-accordion-down: accordion-down 0.2s ease-out;
+@keyframes accordion-down {
+from { height: 0; }
+to { height: var(--radix-accordion-content-height); }
+}
+--animate-accordion-up: accordion-up 0.2s ease-out;
+@keyframes accordion-up {
+from { height: var(--radix-accordion-content-height); }
+to { height: 0; }
+}
+--color-bg-gradient-start: #eaf1ff;
+--color-bg-gradient-end: #d8e6ff;
+--font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+--font-heading: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+@layer base {
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+border-color: var(--color-border);
+}
+}
+@layer utilities {
+body {
+font-family: var(--font-sans);
+}
+}
+@layer base {
+:root {
+--background: var(--color-background);
+--foreground: var(--color-foreground);
+--card: var(--color-card);
+--card-foreground: var(--color-card-foreground);
+--popover: var(--color-popover);
+--popover-foreground: var(--color-popover-foreground);
+--primary: var(--color-primary);
+--primary-foreground: var(--color-primary-foreground);
+--secondary: var(--color-secondary);
+--secondary-foreground: var(--color-secondary-foreground);
+--muted: var(--color-muted);
+--muted-foreground: var(--color-muted-foreground);
+--accent: var(--color-accent);
+--accent-foreground: var(--color-accent-foreground);
+--destructive: var(--color-destructive);
+--destructive-foreground: var(--color-destructive-foreground);
+--border: var(--color-border);
+--input: var(--color-input);
+--ring: var(--color-ring);
+--chart-1: var(--color-chart-1);
+--chart-2: var(--color-chart-2);
+--chart-3: var(--color-chart-3);
+--chart-4: var(--color-chart-4);
+--chart-5: var(--color-chart-5);
+--radius: var(--radius-lg);
+--sidebar-background: var(--color-sidebar);
+--sidebar-foreground: var(--color-sidebar-foreground);
+--sidebar-primary: var(--color-sidebar-primary);
+--sidebar-primary-foreground: var(--color-sidebar-primary-foreground);
+--sidebar-accent: var(--color-sidebar-accent);
+--sidebar-accent-foreground: var(--color-sidebar-accent-foreground);
+--sidebar-border: var(--color-sidebar-border);
+--sidebar-ring: var(--color-sidebar-ring);
+}
+}
+@layer base {
+body {
+@apply bg-background text-foreground;
+}
+.container {
+margin-inline: auto;
+padding-inline: 2rem;
+}
+}
+@layer base {
+html {
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+text-rendering: optimizeLegibility;
+}
+body {
+background-color: var(--color-background);
+background-image: linear-gradient(180deg, var(--color-bg-gradient-start), var(--color-bg-gradient-end));
+background-attachment: fixed;
+color: var(--color-foreground);
+}
+h1, h2, h3, h4 {
+font-family: var(--font-heading);
+color: var(--color-foreground);
+}
+h1 {
+font-weight: 700;
+letter-spacing: -0.02em;
+}
+h2 {
+font-weight: 700;
+letter-spacing: -0.015em;
+}
+h3 {
+font-weight: 600;
+letter-spacing: -0.01em;
+}
+p {
+color: var(--color-foreground);
+}
+small, .text-muted-foreground {
+color: var(--color-muted-foreground);
+}
+a {
+color: var(--color-primary);
+text-decoration: none;
+}
+.font-sans {
+font-family: var(--font-sans);
+}
+.font-heading {
+font-family: var(--font-heading);
+}
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}
